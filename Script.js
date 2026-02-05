@@ -6,6 +6,10 @@ let positions = ["", "", "", "", "", "", "", "", ""];
 let currentPlayer = "X";
 let gameRunning = true;
 
+const changeThemeBtn = document.getElementById("changeThemeBtn")
+let theme = "light"
+
+
 const winConditions = [
     [0, 1, 2],
     [3, 4, 5],
@@ -92,3 +96,12 @@ function resetGame() {
 
 startGame();
 
+
+
+const themeToggle = document.querySelector(".theme-toggle");
+
+themeToggle.addEventListener("click", changeTheme);
+
+function changeTheme() {
+    document.body.classList.toggle("dark-theme");
+}

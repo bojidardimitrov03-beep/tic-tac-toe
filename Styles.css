@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 
+body {
+    background-color: white;
+    color: black;
+}
+
 .cell {
     width: 100px;
     height: 100px;
@@ -9,11 +14,14 @@
     line-height: 100px;
     font-size: 50px;
     cursor: pointer;
+    background-color: white;
+    color: black;
 }
 
 #gameContainer {
     font-family: "Outfit", sans-serif;
     text-align: center;
+    background-color: #f0f0f0
 }
 
 #cellContainer {
@@ -25,6 +33,7 @@
 
 #resetBtn {
     background-color: lightblue;
+    color: black;
     border-radius: 10px;
     border: none;
     font-size: 18px;
@@ -35,4 +44,88 @@
 
 #resetBtn:hover {
     filter: brightness(0.8);
+}
+
+body.dark-theme {
+    background-color: #1a1a1a;
+    color: white;
+}
+
+body.dark-theme #gameContainer {
+    background-color: #2a2a2a;
+}
+
+body.dark-theme .cell {
+    background-color: #333;
+    color: white;
+    border: 2px solid white;
+}
+
+body.dark-theme #resetBtn {
+    background-color: #444;
+    color: white;
+}
+
+.theme-toggle {
+    width: 60px;
+    height: 30px;
+    background-color: #ccc;
+    border-radius: 30px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.toggle-circle {
+    width: 26px;
+    height: 26px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    transition: left 0.3s;
+}
+
+/* When dark theme is active */
+body.dark-theme .theme-toggle {
+    background-color: #4a4a4a;
+}
+
+body.dark-theme .toggle-circle {
+    left: 32px;
+    /* Moves to the right */
+}
+
+#changeTheme-Container {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    gap: 10px;
+
+}
+
+/* Smooth transitions for all elements */
+body {
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+#gameContainer {
+    transition: background-color 0.5s ease;
+}
+
+.cell {
+    transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
+}
+
+#resetBtn {
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+#statusText {
+    transition: color 0.5s ease;
+}
+
+h1 {
+    transition: color 0.5s ease;
 }
